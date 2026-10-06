@@ -1,3 +1,5 @@
+# UPDATED 2026-10-06
+# https://ip.net.coffee/claude/site.html
 payload:
   # 核心域名
   - DOMAIN-SUFFIX,anthropic.com
