@@ -96,7 +96,7 @@ DOMAIN-SUFFIX,intercomcdn.com
 # =========================
 
 # Claude 本地进程
-PROCESS-NAME,claude
+PROCESS-NAME-WILDCARD,claude*
 
 
 # =========================
