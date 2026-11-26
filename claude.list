@@ -1,36 +1,115 @@
-# UPDATED 2026-10-06
+# UPDATED 2026-11-26
+# Sources:
 # https://ip.net.coffee/claude/site.html
+# https://shuita.xyz/rules
 
-# 核心域名（DOMAIN-SUFFIX 已覆盖所有 *.anthropic.com 子域名）
+# =========================
+# Claude / Anthropic Core
+# =========================
+
+# 核心域名
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,claude.dev
 DOMAIN-SUFFIX,clau.de
+
+# MCP / 用户内容 / Artifacts
 DOMAIN-SUFFIX,claudemcpclient.com
 DOMAIN-SUFFIX,claudemcpcontent.com
+DOMAIN-SUFFIX,claudemcpusercontent.com
 DOMAIN-SUFFIX,claudeusercontent.com
 
-# CDN 和静态资源
+# 核心服务关键词兜底
+# DOMAIN-KEYWORD,anthropic
+# DOMAIN-KEYWORD,claude
+
+
+# =========================
+# CDN / Static Resources
+# =========================
+
+# Anthropic 官网及静态资源
 DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN,anthropic.com.cdn.cloudflare.net
+DOMAIN-SUFFIX,fullstack-anthropic-website-b-cdn.net
 
-# 认证 / 内容
+
+# =========================
+# Authentication / Content
+# =========================
+
+# Cloudflare 通用验证服务（默认禁用）
+# DOMAIN,challenges.cloudflare.com
+
+# Auth0 认证
 DOMAIN,anthropic.auth0.com
+
+# Ghost 内容服务
 DOMAIN,anthropic-com.ghost.io
 
-# 监控和遥测
-DOMAIN-SUFFIX,sentry.io
-DOMAIN-SUFFIX,statsigapi.net
-DOMAIN,browser-intake-us5-datadoghq.com
-DOMAIN-KEYWORD,datadog
-DOMAIN-KEYWORD,sift
 
-# 客服 / 第三方 widget
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,intercomcdn.com
+# =========================
+# Feature Flags / Config
+# =========================
+
+# Statsig 功能开关及配置
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+
+
+# =========================
+# Telemetry / Analytics
+# =========================
+
+# Sentry
+DOMAIN-SUFFIX,sentry.io
+
+# Datadog / CLI / Web 遥测
+# DOMAIN,http-intake.logs.us5.datadoghq.com
+# DOMAIN,http-intake.us5.datadoghq.com
+# DOMAIN,browser-intake-us5-datadoghq.com
+DOMAIN-KEYWORD,datadog
+
+# Sift 风控服务
+DOMAIN-SUFFIX,sift.com
+DOMAIN-SUFFIX,siftscience.com
+DOMAIN-SUFFIX,hexagon-cdn.com
+DOMAIN-SUFFIX,hexagon-analytics.com
+# DOMAIN-KEYWORD,sift
+
+# Fathom Analytics
 DOMAIN,cdn.usefathom.com
 
-# IP 段 / ASN 兜底
+
+# =========================
+# Customer Support
+# =========================
+
+# Intercom 客服及 Widget
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+
+
+# =========================
+# Local Process
+# =========================
+
+# Claude 本地进程
+PROCESS-NAME,claude
+
+
+# =========================
+# IP / ASN Fallback
+# =========================
+
+# Anthropic IPv4
 IP-CIDR,160.79.104.0/21,no-resolve
+IP-CIDR,153.61.208.0/20,no-resolve
+IP-CIDR,153.61.224.0/22,no-resolve
+
+# Anthropic IPv6
 IP-CIDR6,2607:6bc0::/32,no-resolve
+
+# Anthropic ASN
 IP-ASN,399358,no-resolve
