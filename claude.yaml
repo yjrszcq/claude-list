@@ -97,7 +97,7 @@ payload:
   # =========================
 
   # Claude 本地进程
-  - PROCESS-NAME-WILDCARD,claude*
+  # - PROCESS-NAME-WILDCARD,claude*
 
 
   # =========================
